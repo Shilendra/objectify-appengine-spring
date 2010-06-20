@@ -46,7 +46,7 @@ import com.googlecode.objectify.ObjectifyFactory;
  * Example configuration:
  * 
  * <pre class="code"> &lt;bean class="nl.vooty.beans.factory.objectify.ObjectifyFactoryBean"
- *   p:basePackage="nl.vooty.domain" /&gt;</pre>
+ *   p:basePackage="com.acme.domain" /&gt;</pre>
  *
  * Alternatively it is also possible to explicitly define classes to be
  * registered in the ObjectifyFactory. This approach is only useful when you 
@@ -56,12 +56,12 @@ import com.googlecode.objectify.ObjectifyFactory;
  * Example configuration:
  *
  * <pre class="code"> &lt;bean class="nl.vooty.beans.factory.objectify.ObjectifyFactoryBean"&gt;
- *   &lt;property name="classes"&gt
- *     &lt;list&gt
- *       &lt;value>nl.vooty.domain.Club&lt;/value&gt
- *       &lt;value>nl.vooty.domain.Competition&lt;/value&gt
- *     &lt;/list&gt
- *  &lt;/property&gt
+ *   &lt;property name="classes"&gt;
+ *     &lt;list&gt;
+ *       &lt;value&gt;com.acme.domain.Person&lt;/value&gt;
+ *       &lt;value&gt;com.acme.domain.Address&lt;/value&gt;
+ *     &lt;/list&gt;
+ *  &lt;/property&gt;
  * &lt;/bean&gt;</pre>
  *
  * @author Marcel Overdijk
