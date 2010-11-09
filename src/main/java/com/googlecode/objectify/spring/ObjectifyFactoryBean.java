@@ -45,7 +45,7 @@ import com.googlecode.objectify.ObjectifyFactory;
  *
  * Example configuration:
  * 
- * <pre class="code"> &lt;bean class="nl.vooty.beans.factory.objectify.ObjectifyFactoryBean"
+ * <pre class="code"> &lt;bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean"
  *   p:basePackage="com.acme.domain" /&gt;</pre>
  *
  * Alternatively it is also possible to explicitly define classes to be
@@ -55,7 +55,7 @@ import com.googlecode.objectify.ObjectifyFactory;
  *
  * Example configuration:
  *
- * <pre class="code"> &lt;bean class="nl.vooty.beans.factory.objectify.ObjectifyFactoryBean"&gt;
+ * <pre class="code"> &lt;bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean"&gt;
  *   &lt;property name="classes"&gt;
  *     &lt;list&gt;
  *       &lt;value&gt;com.acme.domain.Person&lt;/value&gt;
