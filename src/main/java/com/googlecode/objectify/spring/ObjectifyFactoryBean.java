@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Entity;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.FactoryBean;
@@ -61,8 +59,8 @@ import com.googlecode.objectify.ObjectifyFactory;
  * <pre class="code"> &lt;bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean"&gt;
  *   &lt;property name="classes"&gt;
  *     &lt;list&gt;
+ *       &lt;value&gt;com.mycompany.domain.Car&lt;/value&gt;
  *       &lt;value&gt;com.mycompany.domain.Person&lt;/value&gt;
- *       &lt;value&gt;com.mycompany.domain.Address&lt;/value&gt;
  *     &lt;/list&gt;
  *  &lt;/property&gt;
  * &lt;/bean&gt;</pre>
@@ -131,7 +129,8 @@ public class ObjectifyFactoryBean implements FactoryBean<ObjectifyFactory>, Init
                 this.logger.info("Scanning package [" + basePackage + "]");
             }
             ClassPathScanningCandidateComponentProvider scanner = new ClassPathScanningCandidateComponentProvider(false);
-            scanner.addIncludeFilter(new AnnotationTypeFilter(Entity.class));
+            scanner.addIncludeFilter(new AnnotationTypeFilter(com.googlecode.objectify.annotation.Entity.class));
+            scanner.addIncludeFilter(new AnnotationTypeFilter(javax.persistence.Entity.class));
             Set<BeanDefinition> candidates = scanner.findCandidateComponents(basePackage);
             for (BeanDefinition candidate : candidates) {
                 Class<?> clazz = ClassUtils.resolveClassName(candidate.getBeanClassName(), ClassUtils.getDefaultClassLoader());
