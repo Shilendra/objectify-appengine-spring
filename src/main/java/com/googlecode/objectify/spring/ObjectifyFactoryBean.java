@@ -36,8 +36,9 @@ import com.googlecode.objectify.ObjectifyFactory;
  * {@link com.googlecode.objectify.ObjectifyFactory}.
  *
  * <p>The simplest way to use this class is to provide a basePackage and it will 
- * scan for classes annotated with {@link javax.perjavax.persistence.Entity}.
- * Found classes will be then be registered in the ObjectifyFactory. 
+ * scan for classes annotated with {@link javax.perjavax.persistence.Entity} or
+ * {@link com.googlecode.objectify.annotation.Entity}. Found classes will then 
+ * be registered in the ObjectifyFactory. 
  *
  * <p>Example configuration:
  * 
@@ -50,8 +51,8 @@ import com.googlecode.objectify.ObjectifyFactory;
  *   p:basePackage="com.mycompany.domain;com.othercompany.domain" /&gt;</pre>
  *
  * <p>Alternatively it is also possible to explicitly define classes to be
- * registered in the ObjectifyFactory. This approach is only useful when you 
- * are concerned by App Engine's cold startup times and are not using the 
+ * registered in the ObjectifyFactory. This approach is useful when you are 
+ * concerned by App Engine's cold startup times and are not using the 
  * context:component-scan option to autodetect classes.  
  *
  * <p>Example configuration:
