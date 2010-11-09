@@ -14,6 +14,29 @@
  */
 package com.googlecode.objectify.spring;
 
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.googlecode.objectify.ObjectifyFactory;
+
 public class ObjectifyFactoryBeanTest {
 
+    private ObjectifyFactoryBean factory = null;
+    
+    @Before
+    public void setUp() {
+        factory = new ObjectifyFactoryBean();
+    }
+    
+    @Test
+    public void testGetObjectType() {
+        assertTrue(factory.getObjectType().isAssignableFrom(ObjectifyFactory.class));
+    }
+    
+    @Test
+    public void testIsSingleton() {
+        assertTrue(factory.isSingleton());
+    }
 }
