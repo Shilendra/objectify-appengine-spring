@@ -67,7 +67,6 @@
                 <configuration>
                     <charset>UTF-8</charset>
                     <stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
-                    <excludePackageNames>com.googlecode.janrain4j.http,com.googlecode.janrain4j.tags,com.googlecode.janrain4j.util</excludePackageNames>
                 </configuration>
                 <executions>
                     <execution>
@@ -128,8 +127,8 @@
     </issueManagement>
     <mailingLists>
         <mailingList>
-            <name>Janrain4j</name>
-            <subscribe>jobjectify-appengine-spring-subscribe@googlegroups.com</subscribe>
+            <name>objectify-appengine-spring</name>
+            <subscribe>objectify-appengine-spring-subscribe@googlegroups.com</subscribe>
             <unsubscribe>objectify-appengine-spring+unsubscribe@googlegroups.com</unsubscribe>
             <post>objectify-appengine-spring@googlegroups.com</post>
             <archive>http://groups.google.com/group/objectify-appengine-spring</archive>
