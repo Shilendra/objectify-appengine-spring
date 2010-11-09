@@ -39,27 +39,32 @@ import com.googlecode.objectify.ObjectifyFactory;
  * {@link org.springframework.beans.factory.FactoryBean} that creates an 
  * {@link com.googlecode.objectify.ObjectifyFactory}.
  *
- * The simplest way to use this class is to provide a basePackge and it will 
+ * <p>The simplest way to use this class is to provide a basePackage and it will 
  * scan for classes annotated with {@link javax.perjavax.persistence.Entity}.
  * Found classes will be then be registered in the ObjectifyFactory. 
  *
- * Example configuration:
+ * <p>Example configuration:
  * 
  * <pre class="code"> &lt;bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean"
- *   p:basePackage="com.acme.domain" /&gt;</pre>
+ *   p:basePackage="com.mycompany.domain" /&gt;</pre>
  *
- * Alternatively it is also possible to explicitly define classes to be
+ * <p>Multiple basePackages can be provided as well:
+ * 
+ * <pre class="code"> &lt;bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean"
+ *   p:basePackage="com.mycompany.domain;com.othercompany.domain" /&gt;</pre>
+ *
+ * <p>Alternatively it is also possible to explicitly define classes to be
  * registered in the ObjectifyFactory. This approach is only useful when you 
  * are concerned by App Engine's cold startup times and are not using the 
  * context:component-scan option to autodetect classes.  
  *
- * Example configuration:
+ * <p>Example configuration:
  *
  * <pre class="code"> &lt;bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean"&gt;
  *   &lt;property name="classes"&gt;
  *     &lt;list&gt;
- *       &lt;value&gt;com.acme.domain.Person&lt;/value&gt;
- *       &lt;value&gt;com.acme.domain.Address&lt;/value&gt;
+ *       &lt;value&gt;com.mycompany.domain.Person&lt;/value&gt;
+ *       &lt;value&gt;com.mycompany.domain.Address&lt;/value&gt;
  *     &lt;/list&gt;
  *  &lt;/property&gt;
  * &lt;/bean&gt;</pre>
@@ -97,8 +102,13 @@ public class ObjectifyFactoryBean implements FactoryBean<ObjectifyFactory>, Init
         }
         long startTime = System.currentTimeMillis();
         
-        if (classes == null || classes.size() == 0)
-            classes = doScan();
+        if (classes == null) {
+            classes = new ArrayList<Class<?>>();
+        }
+        
+        if (basePackage != null && basePackage.length() > 0) {
+            classes.addAll(doScan());
+        }
         
         this.objectifyFactory = new ObjectifyFactory();
         
@@ -119,6 +129,9 @@ public class ObjectifyFactoryBean implements FactoryBean<ObjectifyFactory>, Init
         List<Class<?>> classes = new ArrayList<Class<?>>();
         String[] basePackages = StringUtils.tokenizeToStringArray(this.basePackage, ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS);
         for (String basePackage : basePackages) {
+            if (this.logger.isInfoEnabled()) {
+                this.logger.info("Scanning package [" + basePackage + "]");
+            }
             ClassPathScanningCandidateComponentProvider scanner = new ClassPathScanningCandidateComponentProvider(false);
             scanner.addIncludeFilter(new AnnotationTypeFilter(Entity.class));
             Set<BeanDefinition> candidates = scanner.findCandidateComponents(basePackage);
