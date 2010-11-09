@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- The Basics -->
+    <groupId>com.googlecode.objectify.spring</groupId>
+    <artifactId>objectify-spring</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.googlecode.objectify</groupId>
+            <artifactId>objectify</artifactId>
+            <version>2.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>3.0.5.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>5</version>
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    
+    <!-- Build Settings -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
+                    <excludePackageNames>com.googlecode.janrain4j.http,com.googlecode.janrain4j.tags,com.googlecode.janrain4j.util</excludePackageNames>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sources-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>javadoc-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <!-- More Project Information -->
+    <name>objectify-appengine-spring</name>
+    <description>Objectify-Appengine Spring integration</description>
+    <url>http://objectify-appengine-spring.googlecode.com</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>marceloverdijk</id>
+            <name>Marcel Overdijk</name>
+            <email>marceloverdijk@gmail.com</email>
+            <roles>
+                <role>lead</role>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+    
+    <!-- Environment Settings -->
+    <issueManagement>
+        <system>Google Code</system>
+        <url>http://code.google.com/p/objectify-appengine-spring/issues/list</url>
+    </issueManagement>
+    <mailingLists>
+        <mailingList>
+            <name>Janrain4j</name>
+            <subscribe>jobjectify-appengine-spring-subscribe@googlegroups.com</subscribe>
+            <unsubscribe>objectify-appengine-spring+unsubscribe@googlegroups.com</unsubscribe>
+            <post>objectify-appengine-spring@googlegroups.com</post>
+            <archive>http://groups.google.com/group/objectify-appengine-spring</archive>
+        </mailingList>
+    </mailingLists>
+    <scm>
+        <connection>scm:svn:http://objectify-appengine-spring.googlecode.com/svn/trunk/</connection>
+        <developerConnection>scm:svn:https://objectify-appengine-spring.googlecode.com/svn/trunk/</developerConnection>
+        <url>http://objectify-appengine-spring.googlecode.com/svn/trunk/</url>
+    </scm>
+</project>
