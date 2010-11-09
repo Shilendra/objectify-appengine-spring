@@ -139,4 +139,10 @@
         <developerConnection>scm:svn:https://objectify-appengine-spring.googlecode.com/svn/trunk/</developerConnection>
         <url>http://objectify-appengine-spring.googlecode.com/svn/trunk/</url>
     </scm>
+    <repositories>
+        <repository>
+            <id>objectify-appengine</id>
+            <url>http://objectify-appengine.googlecode.com/svn/maven</url>
+        </repository>
+    </repositories>
 </project>
