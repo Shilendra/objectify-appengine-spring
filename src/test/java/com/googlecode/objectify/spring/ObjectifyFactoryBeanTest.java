@@ -44,7 +44,7 @@ public class ObjectifyFactoryBeanTest {
         
         ObjectifyFactory objectifyFactory = factory.getObject();
         
-        Class clazz = Car.class; // Car is annotated with javax.persistence.Entity
+        Class<?> clazz = Car.class; // Car is annotated with javax.persistence.Entity
         assertNotNull(objectifyFactory.getMetadata(clazz));
         assertNotNull(clazz.getAnnotation(javax.persistence.Entity.class));
     }
@@ -56,7 +56,7 @@ public class ObjectifyFactoryBeanTest {
         
         ObjectifyFactory objectifyFactory = factory.getObject();
         
-        Class clazz = Insurance.class; // Insurance is annotated with com.googlecode.objectify.annotation.Entity
+        Class<?> clazz = Insurance.class; // Insurance is annotated with com.googlecode.objectify.annotation.Entity
         assertNotNull(objectifyFactory.getMetadata(clazz));
         assertNotNull(clazz.getAnnotation(com.googlecode.objectify.annotation.Entity.class));
     }
@@ -91,6 +91,22 @@ public class ObjectifyFactoryBeanTest {
         classes.add(Person.class);
         classes.add(Insurance.class);
         
+        factory.setClasses(classes);
+        factory.afterPropertiesSet();
+        
+        ObjectifyFactory objectifyFactory = factory.getObject();
+        
+        assertNotNull(objectifyFactory.getMetadata(Car.class));
+        assertNotNull(objectifyFactory.getMetadata(Person.class));
+        assertNotNull(objectifyFactory.getMetadata(Insurance.class));
+    }
+    
+    @Test
+    public void testGetObjectWithBasePackageAndClasses() throws Exception {
+        List<Class<?>> classes = new ArrayList<Class<?>>();
+        classes.add(Insurance.class);
+        
+        factory.setBasePackage("com.mycompany.domain");
         factory.setClasses(classes);
         factory.afterPropertiesSet();
         
