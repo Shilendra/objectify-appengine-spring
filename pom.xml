@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
     
     <!-- The Basics -->
-    <groupId>com.googlecode.objectify.spring</groupId>
-    <artifactId>objectify-spring</artifactId>
+    <groupId>com.googlecode.objectify-appengine-spring</groupId>
+    <artifactId>objectify-appengine-spring</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <dependencies>
