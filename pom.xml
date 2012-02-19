@@ -159,9 +159,9 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:svn:http://objectify-appengine-spring.googlecode.com/svn/trunk/</connection>
-        <developerConnection>scm:svn:https://objectify-appengine-spring.googlecode.com/svn/trunk/</developerConnection>
-        <url>http://objectify-appengine-spring.googlecode.com/svn/trunk/</url>
+        <connection>scm:git:git@github.com:marceloverdijk/objectify-appengine-spring.git</connection>
+        <developerConnection>scm:git:git@github.com:marceloverdijk/objectify-app</developerConnection>
+        <url>scm:git:git@github.com:marceloverdijk/objectify-app</url>
     </scm>
     <repositories>
         <repository>
