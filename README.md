@@ -28,12 +28,12 @@ Alternatively it is also possible to explicitly define classes to be registered 
 Example configuration:
 
     <bean class="com.googlecode.objectify.spring.ObjectifyFactoryBean">
-      <property name="classes">
-        <list>
-          <value>com.mycompany.domain.Person</value>
-          <value>com.mycompany.domain.Address</value>
-        </list>
-      </property>
+        <property name="classes">
+            <list>
+                <value>com.mycompany.domain.Person</value>
+                <value>com.mycompany.domain.Address</value>
+            </list>
+        </property>
     </bean>
 
 After the ObjectifyFactoryBean is configured, the ObjectifyFactory can be injected in other classes like:
