@@ -71,7 +71,7 @@ Authors
 
 + marcel@overdijk.me
 + http://twitter.com/marceloverdijk
-+ http://github.com/maceloverdijk
++ http://github.com/marceloverdijk
 
 
 Copyright and License
