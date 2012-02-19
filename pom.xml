@@ -122,7 +122,7 @@
     <!-- More Project Information -->
     <name>objectify-appengine-spring</name>
     <description>Objectify-Appengine Spring integration</description>
-    <url>http://objectify-appengine-spring.googlecode.com</url>
+    <url>http://github.com/marceloverdijk/objectify-appengine-spring</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -146,8 +146,8 @@
     
     <!-- Environment Settings -->
     <issueManagement>
-        <system>Google Code</system>
-        <url>http://code.google.com/p/objectify-appengine-spring/issues/list</url>
+        <system>GitHub</system>
+        <url>http://github.com/marceloverdijk/objectify-appengine-spring/issues</url>
     </issueManagement>
     <mailingLists>
         <mailingList>
@@ -159,9 +159,9 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:git:git@github.com:marceloverdijk/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:git@github.com:marceloverdijk/${project.artifactId}.git</developerConnection>
-        <url>http://github.com/marceloverdijk/${project.artifactId}</url>
+        <connection>scm:git:git@github.com:marceloverdijk/objectify-appengine-spring.git</connection>
+        <developerConnection>scm:git:git@github.com:marceloverdijk/objectify-appengine-spring.git</developerConnection>
+        <url>http://github.com/marceloverdijk/objectify-appengine-spring</url>
     </scm>
     <repositories>
         <repository>
