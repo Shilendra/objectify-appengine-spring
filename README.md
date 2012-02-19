@@ -1,7 +1,7 @@
 Objectify App Engine Spring
 ===========================
 
-This project contains a Spring <a href="http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/beans/factory/FactoryBean.html">FactoryBean</a< to integrate <a href="http://code.google.com/p/objectify-appengine">Objectify</a> with <a href="http://www.springsource.org">Spring</a>.
+This project contains a Spring <a href="http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/beans/factory/FactoryBean.html">FactoryBean</a> to integrate <a href="http://code.google.com/p/objectify-appengine">Objectify</a> with the <a href="http://www.springsource.com/developer/spring">Spring Framework</a>.
 
 First, download the latest <a href="http://github.com/downloads/marceloverdijk/objectify-appengine-spring/objectify-appengine-spring-1.1.1.jar">objectify-appengine-spring-1.1.jar</a> and include it your application's classpath.
 
