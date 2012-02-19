@@ -159,9 +159,9 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:git:git@github.com:marceloverdijk/objectify-appengine-spring.git</connection>
-        <developerConnection>scm:git:git@github.com:marceloverdijk/objectify-app</developerConnection>
-        <url>scm:git:git@github.com:marceloverdijk/objectify-app</url>
+        <connection>scm:git:git@github.com:marceloverdijk/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:git@github.com:marceloverdijk/${project.artifactId}.git</developerConnection>
+        <url>http://github.com/marceloverdijk/${project.artifactId}</url>
     </scm>
     <repositories>
         <repository>
